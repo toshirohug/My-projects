@@ -1,0 +1,102 @@
+@voltarfrete
+Cenário: Navegar para a página do frete ao invés de pagar.
+    Dado que eu esteja no site de compras.
+    Quando escolher um produto qualquer na loja.
+    E prossiga para o checkout.
+    Então valide os dados do produto no carrinho.
+    Quando realizar o cadastro do cliente caso não cadastrado, ou realizar o login.
+    Então valide se o endereço está correto e prossiga.
+    Quando aceitar os termos de serviço e prosseguir.
+    Então valide o valor total da compra.
+	Quando optar por não fechar a compra e for verificar o frete
+	Então valide o valor do frete
+	
+@voltarendereco
+Cenário: Navegar para a página de endereco ao invés de pagar.
+    Dado que eu esteja no site de compras.
+    Quando escolher um produto qualquer na loja.
+    E prossiga para o checkout.
+    Então valide os dados do produto no carrinho.
+    Quando realizar o cadastro do cliente caso não cadastrado, ou realizar o login.
+    Então valide se o endereço está correto e prossiga.
+    Quando aceitar os termos de serviço e prosseguir.
+    Então valide o valor total da compra.
+	Quando optar por não fechar a compra e for verificar o frete
+	E optar por voltar para verificar o endereco
+	Então valide se o endereço está correto e prossiga.
+	
+@atualizaendereco
+Cenário: Navegar para a página de resumo da compra
+	Dado que eu esteja no site de compras.
+    Quando escolher um produto qualquer na loja.
+    E prossiga para o checkout.
+    Então valide os dados do produto no carrinho.
+    Quando realizar o cadastro do cliente caso não cadastrado, ou realizar o login.
+    Então valide se o endereço está correto e prossiga.
+    Quando aceitar os termos de serviço e prosseguir.
+    Então valide o valor total da compra.
+	Quando optar por não fechar a compra e for verificar o frete
+	E optar por voltar para verificar o endereco
+	E optar por voltar para o cadastro de usuário
+	Então valide se o email está correto e prossiga.
+	
+@salvacompra
+Cenário: Deslogar do site após salvar carrinho e cadastro de usuário
+	Dado que eu esteja no site de compras.
+    Quando escolher um produto qualquer na loja.
+    E prossiga para o checkout.
+    Então valide os dados do produto no carrinho.
+    Quando realizar o cadastro do cliente caso não cadastrado, ou realizar o login
+    Então valide se o endereço está correto e deslogue da conta.
+	
+@adicionaunidade
+Cenário: Adicionar mais uma unidade da peca escolhida na tela de resumo
+    Dado que eu esteja no site de compras.
+    Quando escolher um produto qualquer na loja.
+    E prossiga para o checkout.
+    Então valide os dados do produto no carrinho.
+    Quando adicionar mais uma peca do item que esta no carrinho.
+	Então valide o valor total da compra.
+	
+@subtraiunidade
+Cenário: Subtrair uma unidade da peca escolhida na tela de resumo
+    Dado que eu esteja no site de compras.
+    Quando escolher um produto qualquer na loja.
+    E prossiga para o checkout.
+    Então valide os dados do produto no carrinho.
+    Quando subtrair uma peca do item que esta no carrinho.
+	Então valide a mensagem de carrinho vazio.
+	
+@deletarproduto
+Cenário: Deletar o produto do carrinho
+    Dado que eu esteja no site de compras.
+    Quando escolher um produto qualquer na loja.
+    E prossiga para o checkout.
+    Então valide os dados do produto no carrinho.
+    Quando deletar uma peca do item que esta no carrinho
+	Então valide a mensagem de carrinho vazio
+
+@continuarcompra
+Cenário: Validar que ainda está na página de seleção de produtos
+    Dado que eu esteja no site de compras.
+    Quando escolher um produto qualquer na loja.
+    E continuar as compras no shopping
+	Então valide o produto o produto selecionado
+	
+@historicocompra
+Cenário: Validar que não há histórico enquanto não há compra finalizada
+    Dado que eu esteja no site de compras.
+    Quando escolher um produto qualquer na loja.
+    E verifico que o produto está no carrinho.
+	Então fecho a tela.
+	E clico no meu perfil de usuario.
+	E clico no historico de pedidos.
+	Então valido a mensagem de zero pedidos.
+
+@buscapedidoselecionado
+Cenário: Pesquisar o produto do carrinho e adicionar mais uma peça através da página de resultados da pesquisa
+    Dado que eu esteja no site de compras.
+	Quando escolher um produto qualquer na loja.
+	E pesquiso pelo produto adicionado.
+	Quando adiciono o produto no carrinho.
+	Então valido a mensagem de dois itens no carrinho.
